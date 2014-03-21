@@ -51,7 +51,7 @@
 									<img src="/static/images/slide1.png" alt="" />
 								</li>
 								<li >
-									<img src="/static/images/slide2.png"alt=""  />
+									<img src="/static/images/slide2.png" alt=""  />
 								</li>
 								<li >
 									<img src="/static/images/slide3.png" alt="" />
@@ -122,23 +122,36 @@
 				<div class="why_in">
 					<h2 class="blue upper">Почему выбирают нас?</h2>
 					<div class="why_blok">
-						<a class="why_one" href="#why_one_1">
+						<a class="why_one">
 							<h4>15 лет опыта</h4>
 							{{ textblocks.0.content|safe }}
+							
+							<div id="why_one_1" class="all_text">
+                                <h4>15 лет опыта</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <div class="btn_close">
+                                    <button id="fancybox-overlay" class="btn_close" onclick="$.fancybox.close();">Закрыть</button>
+                                    
+                                </div>
+                            </div>
 						</a>
-						<a class="why_one" href="#why_one_2">
+						
+						<a class="why_one">
 							<h4>Работа на результат</h4>
 							{{ textblocks.1.content|safe }}
 						</a>
-						<a class="why_one" href="#why_one_3">
+						<a class="why_one">
 							<h4>Фиксированная оплата</h4>
 							{{ textblocks.2.content|safe }}
 						</a>
-						<a class="why_one" href="#why_one_4">
+						<a class="why_one">
 							<h4>Точно в срок!</h4>
 							{{ textblocks.3.content|safe }}
 						</a>
-						<a class="why_one" href="#why_one_5">
+						<a class="why_one">
 							<h4>Внимательный подход</h4>
 							{{ textblocks.4.content|safe }}
 						</a>
@@ -331,18 +344,18 @@
 								<h5>шаг2</h5>
 								<h3 class="yellow upper">Проверка</h3>
 								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								<a href="#" class="more">Подробнее</a>
+								<a href="#why_one_1" class="more">Подробнее</a>
 							</li>
 							<li>
 								<h5>шаг3</h5>
 								<h3 class="yellow upper">Регистрация</h3>
 								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								<a href="#" class="more">Подробнее</a>
+								<a href="#why_one_1" class="more">Подробнее</a>
 							</li>
 							<li>
 								<img src="/static/images/pechat.png" alt="" />
 								<h5 class="blue upper">ПОЛУЧЕНИЕ СВИДЕТЕЛЬСТВА ПАТЕНТА</h5>
-								<a href="#" class="more">Подробнее</a>
+								<a href="#why_one_1" class="more">Подробнее</a>
 								
 							</li>
 						</ul>
@@ -469,7 +482,7 @@
 					}
 				});
 			});
-			jQuery("a.why_one").fancybox({
+			jQuery("a.more").fancybox({
 				autoSize: true,				
 				scrolling: 'no'
 			});
