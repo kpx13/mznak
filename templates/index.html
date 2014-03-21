@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Главная</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/jquery.fancybox.css" type="text/css" media="screen" />
+        
+
+    </head>
+    <body>
+        <div class="wrapper">
+			<div class="header">
+				<div class="header_in">
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<div class="schetchik">
+										<div class="fst_n">
+											<span>9</span>
+										</div>
+										<div class="snd_n">
+											<span>8</span>
+										</div>
+										<div class="thd_n">
+											<span>6</span>
+										</div>
+										<span class="done">выполненных заказов</span>
+									</div>
+									<span>Товарные знаки</span>
+								</td>
+								<td>
+									<span>Регистрация и разработка</span>
+									<a href="/" class="logo"><img src="/static/images/logo.gif" alt="" /></a>
+								</td>
+								<td>
+									<span class="phone">8 (926) 555-55-55</span>
+									<p>
+										<a href="#">Написать нам</a>
+									</p>
+									<span>Промобразцы</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="header_d">
+						<div id="slider" class="flexslider">
+							<ul class="slides">
+								<li >
+									<img src="/static/images/slide1.png" alt="" />
+								</li>
+								<li >
+									<img src="/static/images/slide2.png"alt=""  />
+								</li>
+								<li >
+									<img src="/static/images/slide3.png" alt="" />
+								</li>
+								<li >
+									<img src="/static/images/slide4.png" alt="" />
+								</li>
+								<li >
+									<img src="/static/images/slide5.png" alt="" />
+								</li>
+								<li >
+									<img src="/static/images/slide6.png" alt="" />
+								</li>
+								<li >
+									<img src="/static/images/slide7.png" alt="" />
+								</li>
+								
+							</ul>
+						</div>
+						<div id="carousel" class="flexslider">
+							<ul class="slides">
+								<li>
+									<img src="/static/images/slider_thumb/slide-thumb1.png" alt="" />
+								</li>
+								<li>
+									<img src="/static/images/slider_thumb/slide-thumb2.png" alt="" />
+								</li>
+								<li>
+									<img src="/static/images/slider_thumb/slide-thumb3.png" alt="" />
+								</li>
+								<li>
+									<img src="/static/images/slider_thumb/slide-thumb4.png" alt="" />
+								</li>
+								<li>
+									<img src="/static/images/slider_thumb/slide-thumb5.png" alt="" />
+								</li>
+								<li>
+									<img src="/static/images/slider_thumb/slide-thumb6.png" alt="" />
+								</li>
+								<li>
+									<img src="/static/images/slider_thumb/slide-thumb7.png" alt="" />
+								</li>
+							</ul>
+						</div>
+						<div class="form">
+							<h3>Обратная связь</h3>
+							<form>
+								<p>
+									<label for="name">Ваше имя</label><input type="text" id="name" />
+								</p>
+								<p>
+									<label for="phone">Телефон</label><input type="text" id="phone" />
+								</p>
+								<p>
+									<label for="email">Эл. почта</label><input type="text" id="email" />
+								</p>
+								<p>
+									<textarea name="text" onfocus="if(this.value  == 'Ваше сообщение') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Ваше сообщение'; } " >Ваше сообщение</textarea>
+								</p>
+								<button>Отправить</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div> <!-- header -->
+			
+			<div class="why">
+				<div class="why_in">
+					<h2 class="blue upper">Почему выбирают нас?</h2>
+					<div class="why_blok">
+						<a class="why_one" href="#why_one_1">
+							<h4>15 лет опыта</h4>
+							{{ textblocks.0.content|safe }}
+						</a>
+						<a class="why_one" href="#why_one_2">
+							<h4>Работа на результат</h4>
+							{{ textblocks.1.content|safe }}
+						</a>
+						<a class="why_one" href="#why_one_3">
+							<h4>Фиксированная оплата</h4>
+							{{ textblocks.2.content|safe }}
+						</a>
+						<a class="why_one" href="#why_one_4">
+							<h4>Точно в срок!</h4>
+							{{ textblocks.3.content|safe }}
+						</a>
+						<a class="why_one" href="#why_one_5">
+							<h4>Внимательный подход</h4>
+							{{ textblocks.4.content|safe }}
+						</a>
+					</div>
+					<div class="shadow_w"></div>
+				</div>
+			</div><!-- why -->
+			
+			<div class="cost">
+				<div class="cost_in">
+					<h2 class="yellow upper">стоимость</h2>
+					<div class="cost_blok">
+						<section class="tabs">
+							<input id="tab_1" type="radio" name="tab" >
+							<input id="tab_2" type="radio" name="tab" checked="checked">
+							<input id="tab_3" type="radio" name="tab">
+							<label for="tab_1" id="tab_l1">Разработка дизайна</label>
+							<label for="tab_2" id="tab_l2">Товарный знак, марка</label>
+							<label for="tab_3" id="tab_l3">Промышленный образец</label>
+							<div style="clear:both"></div>
+
+							<div class="tabs_cont">
+								<div id="tab_c1">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum, diam vel mollis laoreet, dolor dolor fringilla ligula, at condimentum velit dui a arcu. Integer dapibus sapien eu tellus ullamcorper adipiscing. Aliquam congue interdum venenatis. Sed ornare pulvinar commodo. Vivamus faucibus velit enim. Nulla at lorem felis, quis condimentum felis. Nulla luctus consequat tellus at faucibus. Donec et felis at lacus lobortis luctus. In quis nisl metus. Aenean ultricies augue in sem elementum consequat. Vestibulum convallis sollicitudin venenatis. Aliquam et enim lacus.</p>
+									<p>Integer sapien erat, convallis pulvinar tempor sit amet, placerat in metus. Mauris volutpat porttitor magna euismod sodales. Ut quis consequat augue. Curabitur ut neque sed purus accumsan feugiat sed sit amet lacus. Donec blandit scelerisque metus, nec consectetur odio varius et. Nulla nibh nibh, pellentesque et mattis eget, rutrum porttitor nulla. Aliquam pharetra augue quis nisl luctus sit amet convallis augue consequat.</p>
+								</div>
+								<div id="tab_c2">
+									<table>
+										<tbody>
+											<tr>
+												<td>
+													Наименование
+												</td>
+												<td>
+													Цена
+												</td>
+												<td>
+													Срок
+												</td>
+												<td>
+													Госпошлина
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>Полная проверка знака</p>
+													<p>—  Слово или рисунок</p>
+													<p>—  Слово и рисунок вместе</p>
+												</td>
+												<td>
+													
+													<p>8 000 руб.</p>
+													<p>9 000 руб.</p>
+												</td>
+												<td>
+													
+													<p>10 дней</p>
+													<p>15 дней</p>
+												</td>
+												<td>
+													
+													<p>Не оплачивается</p>
+													<p>Не оплачивается</p>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													Регистрация знака
+												</td>
+												<td>
+													10 000 руб.
+												</td>
+												<td>
+													14 дней
+												</td>
+												<td>
+													10 000 руб.
+												</td>
+											</tr>
+											<tr>
+												<td>
+													Регистрация знака
+												</td>
+												<td>
+													10 000 руб.
+												</td>
+												<td>
+													14 дней
+												</td>
+												<td>
+													10 000 руб.
+												</td>
+											</tr>
+											<tr>
+												<td>
+													Регистрация знака
+												</td>
+												<td>
+													10 000 руб.
+												</td>
+												<td>
+													14 дней
+												</td>
+												<td>
+													10 000 руб.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div id="tab_c3">
+									<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean dictum, sapien sed tincidunt condimentum, turpis purus sollicitudin urna, eget ullamcorper quam libero mattis odio. Nulla eget augue est, vitae egestas nibh. Morbi eu neque sed ante gravida vestibulum et a risus. Nullam ultrices eleifend augue id lacinia. Cras at sapien urna, sit amet pharetra neque. Praesent non sem eu justo malesuada vestibulum id ac nisl. Cras accumsan velit eget quam dictum commodo. Donec iaculis ipsum eu arcu aliquet pellentesque. Donec non velit nec arcu auctor egestas. Etiam consectetur tellus sed eros convallis placerat.</p>
+									<p>Vivamus imperdiet varius urna, sed ullamcorper enim interdum ac. Quisque nibh risus, auctor quis ultricies non, ultricies ut purus. Mauris vitae augue erat. Praesent blandit diam at est laoreet suscipit. Vivamus mauris quam, gravida ultricies sodales sit amet, commodo a eros. Vestibulum varius sollicitudin nisl, vitae sollicitudin dolor aliquet in. Duis et nulla mi. Morbi sit amet mi nisl. Cras eu augue libero. Cras laoreet ligula in augue tempus accumsan.</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="shadow_w"></div>
+				</div>
+			</div><!-- cost -->
+			
+			<div class="znaki">
+				<div class="znaki_in">
+					<div class="znaki_reg">
+						<h3 class="blue upper">ЗНАКИ, ЗАРЕГИСТРИРОВАННЫЕ НАМИ</h3>
+						<div class="znaki_slide">
+							<div class="znaki_slide_ins">
+								<ul class="znaki_slide_in">
+									<li>
+										<a href="#" class="znak_one z1"><img src="/static/images/z1_inst.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z1_natali.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z1_terem.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z1_baskov.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z1_puff.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z2_snc.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z2_alegrova.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z2_obuv.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z2_mdw.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z2_setlcity.png" alt="" /></a>
+										
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="prev"></a>
+							<a href="#" class="next"></a>
+						</div>
+						<div class="shadow_w"></div>
+					</div>
+					
+					<div class="znaki_made">
+						<h3 class="blue upper">ЗНАКИ, РАЗРАБОТАННЫЕ НАМИ</h3>
+						<div class="znaki_slide">
+							<div class="znaki_slide_ins">
+								<ul class="znaki_slide_in">
+									<li>
+										<a href="#" class="znak_one z1"><img src="/static/images/z3_zvezda.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z3_fizomed.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z3_altec.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z2_alegrova.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z3_ppb.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z4_vkusn_ist.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z4_greg.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z4_iafc.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z4_moshenson.png" alt="" /></a>
+										<a href="#" class="znak_one z1"><img src="/static/images/z4_turnir.png" alt="" /></a>
+									</li>
+								</ul>
+							</div>
+							<a href="#" class="prev"></a>
+							<a href="#" class="next"></a>
+						</div>
+						<div class="shadow_w"></div>
+					</div>
+				</div>
+			</div><!-- znaki -->
+			
+			<div class="how">
+				<div class="how_in">
+					<h2 class="upper">КАК ЗАРЕГИСТРИРОВАТЬ - 3 ПРОСТЫХ ШАГА</h2>
+					<div class="how_blok">
+						<ul>
+							<li>
+								<h5>шаг1</h5>
+								<h3 class="yellow upper">ЗВОНОК</h3>
+								<h4 class="yellow upper">8 (921) 555-55-55</h4>
+								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								
+							</li>
+							<li>
+								<h5>шаг2</h5>
+								<h3 class="yellow upper">Проверка</h3>
+								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<a href="#" class="more">Подробнее</a>
+							</li>
+							<li>
+								<h5>шаг3</h5>
+								<h3 class="yellow upper">Регистрация</h3>
+								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<a href="#" class="more">Подробнее</a>
+							</li>
+							<li>
+								<img src="/static/images/pechat.png" alt="" />
+								<h5 class="blue upper">ПОЛУЧЕНИЕ СВИДЕТЕЛЬСТВА ПАТЕНТА</h5>
+								<a href="#" class="more">Подробнее</a>
+								
+							</li>
+						</ul>
+					</div>
+					<a href="#" class="doc ital">Пример беcплатной проверки</a>
+				</div>
+				<div class="shadow_d"></div>
+			</div><!-- how -->
+			
+			<div class="zayavka">
+				<div class="zayavka_in">
+					<h2 class="blue upper">ОТПРАВИТЬ НАМ ЗАЯВКУ</h2>
+					<div class="zayavka_blok">
+						<form>
+							<div class="left">
+								<p><label for="name">Ваше имя</label><input type="text" id="name" />
+								</p>
+								<p>
+								<label for="phone">Телефон</label><input type="text" id="phone" />
+								</p>
+								<p>
+								<label for="email">Эл. почта</label><input type="text" id="email" />
+								</p>
+							</div>
+							<div class="right">
+								<textarea name="text" onfocus="if(this.value  == 'Ваше сообщение') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Ваше сообщение'; } " >Ваше сообщение</textarea>
+							</div>
+							<button>Отправить</button>
+						</form>
+					</div>
+				</div>
+			</div><!-- zayavka -->
+			
+			<div class="otzyv">
+				<div class="otzyv_in">
+					<h2 class="blue upper">ОТЗЫВЫ О НАС</h2>
+					<div class="otzyv_blok">
+                        {% for r in reviews %}
+                            <div class="otzyv_one" >
+                                <h5>{{ r.name }}</h5>
+                                <p>
+                                    <span class="fst_s">&#8220;</span>
+                                        {{ r.text }}
+                                    <span class="lst_s">&#8221;</span>
+                                </p>
+                                {% if r.url %}
+                                    <a href="http://{{ r.url }}/">{{ r.url }}</a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+						
+					</div>
+					<div class="shadow_w"></div>
+				</div>
+			</div><!-- otzyv -->
+			
+			<div class="footer">
+				<div class="footer_in">
+					<a href="#" class="footer_logo"><img src="/static/images/footer_logo.png" alt="" /></a>
+					
+						<span class="f_phone">8 (926) 555-55-55</span>
+					<br />
+						<a href="#">Написать нам</a>
+					
+				</div>
+			</div><!-- footer -->
+			
+		</div><!-- wrapper -->
+		<!-- jQuery -->
+		
+		<script src="/static/js/jquery.min.js" type="text/javascript">
+		<script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+		<script type="text/javascript" src="/static/js/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.mousewheel-3.0.4.pack.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.lbslider.js"></script>
+		<script type="text/javascript">
+			//<![CDATA[ 
+			$(window).load(function(){
+			jQuery('.znaki_reg .znaki_slide_ins').lbSlider({
+				leftBtn: '.znaki_reg .prev',
+				rightBtn: '.znaki_reg .next',
+				visible: 1,
+				autoPlay: true,
+				autoPlayDelay: 5
+			});
+			});//]]>  
+		 
+			//<![CDATA[ 
+			$(window).load(function(){
+			jQuery('.znaki_made .znaki_slide_ins').lbSlider({
+				leftBtn: '.znaki_made .prev',
+				rightBtn: '.znaki_made .next',
+				visible: 1,
+				autoPlay: true,
+				autoPlayDelay: 5
+			});
+			});//]]>  
+		 
+			$(function(){
+				SyntaxHighlighter.all();
+			});
+			$(window).load(function(){
+				jQuery('#carousel').flexslider({
+					animation: "slide",
+					controlNav: false,
+					animationLoop: false,
+					slideshow: false,
+					itemWidth: 100,
+					itemMargin: 8,
+					//allowOneSlide: true,
+					asNavFor: '#slider'
+					
+				});
+
+			  jQuery('#slider').flexslider({
+					animation: "slide",
+					controlNav: false,
+					animationLoop: true,
+					slideshow: true,
+					sync: "#carousel",
+					start: function(slider){
+						$('body').removeClass('loading');
+					}
+				});
+			});
+			jQuery("a.why_one").fancybox({
+				autoSize: true,				
+				scrolling: 'no'
+			});
+			
+		  </script>
+		  		
+    </body>
+</html>
