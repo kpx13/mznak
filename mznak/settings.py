@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     'review',
     'slideshow',
     'textblock',
+    'signs',
 )
 
 

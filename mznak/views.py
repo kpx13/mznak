@@ -12,6 +12,7 @@ from order.models import Order
 from review.models import Review
 from slideshow.models import Slider
 from textblock.models import TextBlock
+from signs.models import Sign
 
 import config
 from django.conf import settings
@@ -44,10 +45,22 @@ def get_common_context(request):
     c.update(csrf(request))
     return c
 
+def separate(l):
+    if len(l) <= 10:
+        return [l]
+    else:
+        lenght = len(l)
+        res = []
+        for a in range(0, lenght / 10 +1):
+            res.append(l[a*10: a*10 + 10])
+        return res
+
 def home(request):
     c = get_common_context(request)
     c['request_url'] = 'home'
     c['slider'] = Slider.objects.all()
     c['reviews'] = Review.objects.all()
     c['textblocks'] = TextBlock.objects.all()
+    c['signs_registred'] = separate(Sign.objects.filter(designed=False))
+    c['signs_designed'] = separate(Sign.objects.filter(designed=True))
     return render_to_response('index.html', c, context_instance=RequestContext(request))
