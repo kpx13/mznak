@@ -7,6 +7,11 @@
         <title>Главная</title>
         <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 		<link rel="stylesheet" href="/static/css/jquery.fancybox.css" type="text/css" media="screen" />
+        {% if order_ok %}
+            <script>
+                document.location.href='/#zayavka'
+            </script>
+        {% endif %}
     </head>
     <body>
         <div class="wrapper">
@@ -37,7 +42,7 @@
 								<td>
 									<span class="phone">{{ phone }}</span>
 									<p>
-										<a href="#">Написать нам</a>
+										<a href="#zayavka">Написать нам</a>
 									</p>
 									<span>Промобразцы</span>
 								</td>
@@ -67,21 +72,28 @@
 						</div>
 						<div class="form">
 							<h3>Обратная связь</h3>
-							<form>
-								<p>
-									<label for="name">Ваше имя</label><input type="text" id="name" />
-								</p>
-								<p>
-									<label for="phone">Телефон</label><input type="text" id="phone" />
-								</p>
-								<p>
-									<label for="email">Эл. почта</label><input type="text" id="email" />
-								</p>
-								<p>
-									<textarea name="text" onfocus="if(this.value  == 'Ваше сообщение') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Ваше сообщение'; } " >Ваше сообщение</textarea>
-								</p>
-								<button>Отправить</button>
-							</form>
+                            {% if feedback_ok %}
+                                <p style='text-align: center; height: 300px'>Спасибо! Ваша заявка отправлена!</p>
+                            {% else %}
+                                <form method='POST' action='/'>
+                                    <input type='hidden' name='action' value='feedback'>
+                                    {% csrf_token %}
+                                    
+                                    <p>
+                                        <label>Ваше имя</label><input type="text" name="name" value='{% if form.name.value %}{{ form.name.value }}{% endif %}' {% if form.errors.name %} style='border: 1px solid red;width: 200px' {% endif %} />
+                                    </p>
+                                    <p>
+                                        <label>Телефон</label><input type="text" name="phone" value='{% if form.phone.value %}{{ form.phone.value }}{% endif %}' {% if form.errors.name %} style='border: 1px solid red;width: 200px' {% endif %}/>
+                                    </p>
+                                    <p>
+                                        <label>Эл. почта</label><input type="text" name="email" value='{% if form.email.value %}{{ form.email.value }}{% endif %}'/>
+                                    </p>
+                                    <p>
+                                        <textarea name="comment" placeholder='Ваше сообщение'>{% if form.comment.value %}{{ form.comment.value }}{% endif %}</textarea>
+                                    </p>
+                                    <button>Отправить</button>
+                                </form>
+                            {% endif %}
 						</div>
 					</div>
 				</div>
@@ -215,26 +227,25 @@
 								<h5>шаг1</h5>
 								<h3 class="yellow upper">ЗВОНОК</h3>
 								<h4 class="yellow upper">{{ phone }}</h4>
-								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								{{ textblocks.8.content|safe }}
 								
 							</li>
 							<li>
 								<h5>шаг2</h5>
 								<h3 class="yellow upper">Проверка</h3>
-								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								{{ textblocks.9.content|safe }}
 								<a href="#why_one_1" class="more">Подробнее</a>
 							</li>
 							<li>
 								<h5>шаг3</h5>
 								<h3 class="yellow upper">Регистрация</h3>
-								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								{{ textblocks.10.content|safe }}
 								<a href="#why_one_1" class="more">Подробнее</a>
 							</li>
 							<li>
 								<img src="/static/images/pechat.png" alt="" />
 								<h5 class="blue upper">ПОЛУЧЕНИЕ СВИДЕТЕЛЬСТВА ПАТЕНТА</h5>
 								<a href="#why_one_1" class="more">Подробнее</a>
-								
 							</li>
 						</ul>
 					</div>
@@ -243,26 +254,36 @@
 				<div class="shadow_d"></div>
 			</div><!-- how -->
 			
-			<div class="zayavka">
+			<div class="zayavka" id='zayavka'>
 				<div class="zayavka_in">
 					<h2 class="blue upper">ОТПРАВИТЬ НАМ ЗАЯВКУ</h2>
 					<div class="zayavka_blok">
-						<form>
-							<div class="left">
-								<p><label for="name">Ваше имя</label><input type="text" id="name" />
-								</p>
-								<p>
-								<label for="phone">Телефон</label><input type="text" id="phone" />
-								</p>
-								<p>
-								<label for="email">Эл. почта</label><input type="text" id="email" />
-								</p>
-							</div>
-							<div class="right">
-								<textarea name="text" onfocus="if(this.value  == 'Ваше сообщение') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Ваше сообщение'; } " >Ваше сообщение</textarea>
-							</div>
-							<button>Отправить</button>
-						</form>
+                        {% if order_ok %}
+                            <h1 style='text-align: center; margin: 0 auto'>Спасибо! Ваша заявка отправлена!</h1>
+                        {% else %}
+                            <form method='POST' action='/'>
+                                <input type='hidden' name='action' value='request'>
+                                {% csrf_token %}
+                                <div class="left">
+                                    <p>
+                                        <label>Ваше имя</label>
+                                        <input type="text" name="name" value='{% if form.name.value %}{{ form.name.value }}{% endif %}' {% if form.errors.name %} style='border: 1px solid red' {% endif %} />
+                                    </p>
+                                    <p>
+                                        <label>Телефон</label>
+                                        <input type="text" name="phone" value='{% if form.phone.value %}{{ form.phone.value }}{% endif %}' {% if form.errors.name %} style='border: 1px solid red' {% endif %}/>
+                                    </p>
+                                    <p>
+                                        <label>Эл. почта</label>
+                                        <input type="text" name="email" value='{% if form.email.value %}{{ form.email.value }}{% endif %}'/>
+                                    </p>
+                                </div>
+                                <div class="right">
+                                    <textarea name="comment" placeholder='Ваше сообщение'>{% if form.comment.value %}{{ form.comment.value }}{% endif %}</textarea>
+                                </div>
+                                <button type='submit'>Отправить</button>
+                            </form>
+                        {% endif %}
 					</div>
 				</div>
 			</div><!-- zayavka -->
@@ -296,7 +317,7 @@
 					
 						<span class="f_phone">{{ phone }}</span>
 					<br />
-						<a href="#">Написать нам</a>
+						<a href="#zayavka">Написать нам</a>
 					
 				</div>
 			</div><!-- footer -->

@@ -18,21 +18,17 @@ class OrderForm(ModelForm):
         model = Order
         exclude = ('date', )
       
-    def save(self, *args, **kwargs):
+    def save(self, t, *args, **kwargs):
         super(OrderForm, self).save(*args, **kwargs)
-        if 'card' in self.data:
-            subject=u'Новая запись на тренировку'
+        if t == 'request':
+            subject=u'Новая заявка.'
         else:
-            subject=u'Поступила новая заявка'
+            subject=u'Новое сообщение через обратную связь.'
         
         body_templ="""
 {% for field in form %}
    {{ field.label }} - {{ field.value }}
 {% endfor %}
-
-* Если заполнен комментарий - то это заявка на подарочный сертификат
-* Если заполнена дата-время тренировки - то заявка на тренировку
-* Если оба поля не заполнены, то лучше уточнить, на что заявка
             """
         ctx = Context({
             'form': self,

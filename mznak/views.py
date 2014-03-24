@@ -22,20 +22,24 @@ import datetime
 PAGINATION_COUNT = 5
 
 def get_common_context(request):
-    form = OrderForm()
     c = {}
+    
+    form = OrderForm()
     if request.method == 'POST':
-        if request.POST['action'] == 'order':
-            form = OrderForm(request.POST)
-            if form.is_valid():
-                form.save()
-                c['request-ok'] = True
-            else:
-                messages.error(request, u'Необходимо ввести имя.')
-
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save(request.POST['action'])
+            if request.POST['action'] == 'request':
+                c['order_ok'] = True
+            else: 
+                c['feedback_ok'] = True
+            form = OrderForm()
+        else:
+            messages.error(request, u'Необходимо ввести имя.')
+    c['form'] = form
+    
     c['request_url'] = request.path
     c['is_debug'] = settings.DEBUG
-    c['form'] = form
     c['phone'] = config_value('MyApp', 'PHONE')
     ORDERS_COUNT = int(config_value('MyApp', 'ORDERS_COUNT'))
     c['oc_3'] = ORDERS_COUNT % 10
