@@ -34,8 +34,6 @@ def get_common_context(request):
             else: 
                 c['feedback_ok'] = True
             form = OrderForm()
-        else:
-            messages.error(request, u'Необходимо ввести имя.')
     c['form'] = form
     
     c['request_url'] = request.path
