@@ -14,8 +14,8 @@ from slideshow.models import Slider
 from textblock.models import TextBlock
 
 import config
-from livesettings import config_value
 from django.conf import settings
+from livesettings import config_value
 import datetime
 
 PAGINATION_COUNT = 5
@@ -35,6 +35,12 @@ def get_common_context(request):
     c['request_url'] = request.path
     c['is_debug'] = settings.DEBUG
     c['form'] = form
+    c['phone'] = config_value('MyApp', 'PHONE')
+    ORDERS_COUNT = int(config_value('MyApp', 'ORDERS_COUNT'))
+    c['oc_3'] = ORDERS_COUNT % 10
+    ORDERS_COUNT = ORDERS_COUNT / 10
+    c['oc_2'] = ORDERS_COUNT % 10
+    c['oc_1'] = ORDERS_COUNT / 10
     c.update(csrf(request))
     return c
 

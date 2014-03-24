@@ -1,3 +1,5 @@
+{% load thumbnail %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -5,8 +7,6 @@
         <title>Главная</title>
         <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 		<link rel="stylesheet" href="/static/css/jquery.fancybox.css" type="text/css" media="screen" />
-        
-
     </head>
     <body>
         <div class="wrapper">
@@ -18,13 +18,13 @@
 								<td>
 									<div class="schetchik">
 										<div class="fst_n">
-											<span>9</span>
+											<span>{{ oc_1 }}</span>
 										</div>
 										<div class="snd_n">
-											<span>8</span>
+											<span>{{ oc_2 }}</span>
 										</div>
 										<div class="thd_n">
-											<span>6</span>
+											<span>{{ oc_3 }}</span>
 										</div>
 										<span class="done">выполненных заказов</span>
 									</div>
@@ -35,7 +35,7 @@
 									<a href="/" class="logo"><img src="/static/images/logo.gif" alt="" /></a>
 								</td>
 								<td>
-									<span class="phone">8 (926) 555-55-55</span>
+									<span class="phone">{{ phone }}</span>
 									<p>
 										<a href="#">Написать нам</a>
 									</p>
@@ -47,53 +47,22 @@
 					<div class="header_d">
 						<div id="slider" class="flexslider">
 							<ul class="slides">
-								<li >
-									<img src="/static/images/slide1.png" alt="" />
-								</li>
-								<li >
-									<img src="/static/images/slide2.png" alt=""  />
-								</li>
-								<li >
-									<img src="/static/images/slide3.png" alt="" />
-								</li>
-								<li >
-									<img src="/static/images/slide4.png" alt="" />
-								</li>
-								<li >
-									<img src="/static/images/slide5.png" alt="" />
-								</li>
-								<li >
-									<img src="/static/images/slide6.png" alt="" />
-								</li>
-								<li >
-									<img src="/static/images/slide7.png" alt="" />
-								</li>
-								
+                                {% for s in slider %}
+                                    <li>
+                                        <img src="/media/{{ s.image }}" alt="" />
+                                    </li>
+                                {% endfor %}
 							</ul>
 						</div>
 						<div id="carousel" class="flexslider">
 							<ul class="slides">
-								<li>
-									<img src="/static/images/slider_thumb/slide-thumb1.png" alt="" />
-								</li>
-								<li>
-									<img src="/static/images/slider_thumb/slide-thumb2.png" alt="" />
-								</li>
-								<li>
-									<img src="/static/images/slider_thumb/slide-thumb3.png" alt="" />
-								</li>
-								<li>
-									<img src="/static/images/slider_thumb/slide-thumb4.png" alt="" />
-								</li>
-								<li>
-									<img src="/static/images/slider_thumb/slide-thumb5.png" alt="" />
-								</li>
-								<li>
-									<img src="/static/images/slider_thumb/slide-thumb6.png" alt="" />
-								</li>
-								<li>
-									<img src="/static/images/slider_thumb/slide-thumb7.png" alt="" />
-								</li>
+								{% for s in slider %}
+                                    {% thumbnail s.image "x100" as im %}
+                                        <li>
+                                            <img src="{{ im.url }}" />
+                                        </li>
+                                    {% endthumbnail %}
+                                {% endfor %}
 							</ul>
 						</div>
 						<div class="form">
@@ -336,7 +305,7 @@
 							<li>
 								<h5>шаг1</h5>
 								<h3 class="yellow upper">ЗВОНОК</h3>
-								<h4 class="yellow upper">8 (921) 555-55-55</h4>
+								<h4 class="yellow upper">{{ phone }}</h4>
 								<p>Lorem ipsum dolor sit amet, constur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerctation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 								
 							</li>
@@ -416,7 +385,7 @@
 				<div class="footer_in">
 					<a href="#" class="footer_logo"><img src="/static/images/footer_logo.png" alt="" /></a>
 					
-						<span class="f_phone">8 (926) 555-55-55</span>
+						<span class="f_phone">{{ phone }}</span>
 					<br />
 						<a href="#">Написать нам</a>
 					

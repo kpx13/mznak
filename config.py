@@ -18,3 +18,19 @@ config_register(StringValue(
         help_text = u"Почта, куда будут приходить заявки.",
         default = 'annkpx@gmail.com'
     ))
+
+config_register(StringValue(
+                            MYAPP_GROUP,
+        'PHONE', 
+        description = u'Телефон',
+        help_text = u"Для отображения на сайте",
+        default = '8 (926) 555-55-55'
+    ))
+
+config_register(StringValue(
+                            MYAPP_GROUP,
+        'ORDERS_COUNT', 
+        description = u'Кол-во заказов выполненных',
+        help_text = u"Для отображения в шапке сайта",
+        default = '986'
+    ))
