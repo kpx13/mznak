@@ -584,6 +584,7 @@ background-color: rgba(0, 0, 0, 0.8)!important;
 .all_text {
 width: 739px;
 border-radius: 20px;
+display: none;
 
 }
 .all_text  h4{
@@ -858,7 +859,7 @@ padding: 95px 0 0 0;
 display: block;
 }
 .how_blok ul li{
-height: 250px;
+height: 300px;
 background-color: #fff;
 border: 1px solid #C5C5C5;
 width: 200px;

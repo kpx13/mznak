@@ -104,35 +104,24 @@
 					<h2 class="blue upper">Почему выбирают нас?</h2>
 					<div class="why_blok">
 						<a class="why_one">
-							<h4>15 лет опыта</h4>
+							<h4>{{ textblocks.0.title }}</h4>
 							{{ textblocks.0.content|safe }}
-							
-							<div id="why_one_1" class="all_text">
-                                <h4>15 лет опыта</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <div class="btn_close">
-                                    <button id="fancybox-overlay" class="btn_close" onclick="$.fancybox.close();">Закрыть</button>
-                                </div>
-                            </div>
 						</a>
 						
 						<a class="why_one">
-							<h4>Работа на результат</h4>
+							<h4>{{ textblocks.1.title }}</h4>
 							{{ textblocks.1.content|safe }}
 						</a>
 						<a class="why_one">
-							<h4>Фиксированная оплата</h4>
+							<h4>{{ textblocks.2.title }}</h4>
 							{{ textblocks.2.content|safe }}
 						</a>
 						<a class="why_one">
-							<h4>Точно в срок!</h4>
+							<h4>{{ textblocks.3.title }}</h4>
 							{{ textblocks.3.content|safe }}
 						</a>
 						<a class="why_one">
-							<h4>Внимательный подход</h4>
+							<h4>{{ textblocks.4.title }}</h4>
 							{{ textblocks.4.content|safe }}
 						</a>
 					</div>
@@ -148,9 +137,9 @@
 							<input id="tab_1" type="radio" name="tab" >
 							<input id="tab_2" type="radio" name="tab" checked="checked">
 							<input id="tab_3" type="radio" name="tab">
-							<label for="tab_1" id="tab_l1">Разработка дизайна</label>
-							<label for="tab_2" id="tab_l2">Товарный знак, марка</label>
-							<label for="tab_3" id="tab_l3">Промышленный образец</label>
+							<label for="tab_1" id="tab_l1">{{ textblocks.5.title }}</label>
+							<label for="tab_2" id="tab_l2">{{ textblocks.6.title }}</label>
+							<label for="tab_3" id="tab_l3">{{ textblocks.7.title }}</label>
 							<div style="clear:both"></div>
 
 							<div class="tabs_cont">
@@ -225,34 +214,67 @@
 						<ul>
 							<li>
 								<h5>шаг1</h5>
-								<h3 class="yellow upper">ЗВОНОК</h3>
+								<h3 class="yellow upper">{{ textblocks.8.title }}</h3>
 								<h4 class="yellow upper">{{ phone }}</h4>
 								{{ textblocks.8.content|safe }}
 								
 							</li>
 							<li>
 								<h5>шаг2</h5>
-								<h3 class="yellow upper">Проверка</h3>
+								<h3 class="yellow upper">{{ textblocks.9.title }}</h3>
 								{{ textblocks.9.content|safe }}
 								<a href="#why_one_1" class="more">Подробнее</a>
 							</li>
 							<li>
 								<h5>шаг3</h5>
-								<h3 class="yellow upper">Регистрация</h3>
+								<h3 class="yellow upper">{{ textblocks.10.title }}</h3>
 								{{ textblocks.10.content|safe }}
-								<a href="#why_one_1" class="more">Подробнее</a>
+								<a href="#why_one_2" class="more">Подробнее</a>
 							</li>
 							<li>
 								<img src="/static/images/pechat.png" alt="" />
 								<h5 class="blue upper">ПОЛУЧЕНИЕ СВИДЕТЕЛЬСТВА ПАТЕНТА</h5>
-								<a href="#why_one_1" class="more">Подробнее</a>
+								<a href="#why_one_3" class="more">Подробнее</a>
 							</li>
 						</ul>
 					</div>
-					<a href="#" class="doc ital">Пример беcплатной проверки</a>
+					<a href="#why_one_4" class="doc ital more">Пример беcплатной проверки</a>
 				</div>
 				<div class="shadow_d"></div>
 			</div><!-- how -->
+			
+			
+			<div id="why_one_1" class="all_text">
+                <h4>{{ textblocks.11.title }}</h4>
+                {{ textblocks.11.content|safe }}
+                <div class="btn_close">
+                    <button id="fancybox-overlay" class="btn_close" onclick="$.fancybox.close();">Закрыть</button>
+                </div>
+            </div>
+            
+            <div id="why_one_2" class="all_text">
+                <h4>{{ textblocks.12.title }}</h4>
+                {{ textblocks.12.content|safe }}
+                <div class="btn_close">
+                    <button id="fancybox-overlay" class="btn_close" onclick="$.fancybox.close();">Закрыть</button>
+                </div>
+            </div>
+            
+            <div id="why_one_3" class="all_text">
+                <h4>{{ textblocks.13.title }}</h4>
+                {{ textblocks.13.content|safe }}
+                <div class="btn_close">
+                    <button id="fancybox-overlay" class="btn_close" onclick="$.fancybox.close();">Закрыть</button>
+                </div>
+            </div>
+            
+            <div id="why_one_4" class="all_text">
+                <h4>{{ textblocks.14.title }}</h4>
+                {{ textblocks.14.content|safe }}
+                <div class="btn_close">
+                    <button id="fancybox-overlay" class="btn_close" onclick="$.fancybox.close();">Закрыть</button>
+                </div>
+            </div>
 			
 			<div class="zayavka" id='zayavka'>
 				<div class="zayavka_in">
